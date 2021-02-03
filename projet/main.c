@@ -12,11 +12,11 @@ int main(int argc, char* argv[])
     f = fopen(argv[1], "r");
     if(f==NULL){
       printf("Erreur dans l'ouverture du fichier\n");
-      exit(0);
+      exit(1);
       }
   }else {
     printf("Utilisation : ./main <FichieraOuvrir>\n");
-    exit(0);
+    exit(1);
   }
   unsigned int* line = (unsigned int*) malloc(sizeof(int));
   unsigned int* colonne = (unsigned int*) malloc(sizeof(int));
