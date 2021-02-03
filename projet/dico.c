@@ -57,6 +57,10 @@ void addToDico(dico* dictionary, char* word, unsigned int* line, unsigned int* c
 void displayDico(dico* dictionary) {
   FILE *f = NULL;
   f = fopen(DICORES, "rw+");
+  if(f == NULL){
+    printf("Erreur dans l'ouverture du dictionnaire\n");
+    exit(1);
+  }
   if (!feof(f))
     printf("Resultat existant dans le fichier resultat, on ecrase\n");
   if (dictionary == NULL) {
