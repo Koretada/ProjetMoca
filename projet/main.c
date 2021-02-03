@@ -22,13 +22,11 @@ int main(int argc, char* argv[])
   unsigned int* colonne = (unsigned int*) malloc(sizeof(int));
   char* word = (char*) malloc(sizeof(char)*maxSizeWord);
   dico* dictionary = (dico*) malloc(sizeof(dico));
-  if(f!=NULL){
-    while(!feof(f)) {
-      word = next_word(f,line,colonne); 
-      addToDico(dictionary,word,line,colonne); 
-    }
+  while(!feof(f)) {
+    word = next_word(f,line,colonne); 
+    addToDico(dictionary,word,line,colonne); 
+  }
   displayDico(dictionary);
   fclose(f);
-  }
   return 0;
 }
