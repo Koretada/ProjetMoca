@@ -1,0 +1,199 @@
+\hypertarget{maillon_8h}{}\section{include/maillon.h File Reference}
+\label{maillon_8h}\index{include/maillon.\+h@{include/maillon.\+h}}
+
+
+Les fonctions liées aux maillons.  
+
+
+{\ttfamily \#include \char`\"{}structure.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{maillon_8h_a112a827c744aab9474bec7816e83dd1d}{char\+To\+Num}} (char c)
+\begin{DoxyCompactList}\small\item\em Convertit un char en int. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{maillon_8h_af9d909f1d43b78f659b13c3957de7550}{num\+To\+Char}} (int i)
+\begin{DoxyCompactList}\small\item\em Convertit un int en char. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{maillon_8h_a85671a397508c3dad2cf011a7161c8e5}{get\+Mask}} (int k)
+\begin{DoxyCompactList}\small\item\em Récupère le masque correspondant à l\textquotesingle{}entier k. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{maillon_8h_a69d7cb21be4b069744e7bd49adfed481}{set\+Charnum}} (\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$link, int k, char c)
+\begin{DoxyCompactList}\small\item\em Défini..... \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{maillon_8h_a43491af3d151387f859ad7d9a03371e2}{get\+Charnum}} (\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$link, int k)
+\begin{DoxyCompactList}\small\item\em Défini..... \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$ \mbox{\hyperlink{maillon_8h_a0381425450cb493ddcf82016f3a68715}{string\+To\+Maillon}} (char $\ast$word)
+\begin{DoxyCompactList}\small\item\em convertit un mot en maillon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{maillon_8h_a7e382e1ac4b64fedeaa24a24fc96e14c}{is\+Available}} (char c)
+\begin{DoxyCompactList}\small\item\em Vérifie si c est un bien une lettre minuscule. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{maillon_8h_a130a89121ef82470564c63bffa8b4786}{get\+Size\+Maillon}} (\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Détermine la taille du maillon. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{maillon_8h_ae80e635ff96174d1631df5488937e0ab}{maillon\+To\+String}} (\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$link)
+\begin{DoxyCompactList}\small\item\em Convertit un maillon en chaine de caractère. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions liées aux maillons. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{maillon_8h_a112a827c744aab9474bec7816e83dd1d}\label{maillon_8h_a112a827c744aab9474bec7816e83dd1d}} 
+\index{maillon.\+h@{maillon.\+h}!char\+To\+Num@{char\+To\+Num}}
+\index{char\+To\+Num@{char\+To\+Num}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{char\+To\+Num()}{charToNum()}}
+{\footnotesize\ttfamily int char\+To\+Num (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Convertit un char en int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & est un char. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le code ascii du caractère. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a43491af3d151387f859ad7d9a03371e2}\label{maillon_8h_a43491af3d151387f859ad7d9a03371e2}} 
+\index{maillon.\+h@{maillon.\+h}!get\+Charnum@{get\+Charnum}}
+\index{get\+Charnum@{get\+Charnum}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{get\+Charnum()}{getCharnum()}}
+{\footnotesize\ttfamily char get\+Charnum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$}]{link,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Défini..... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & est un entier \mbox{[}0;5\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a85671a397508c3dad2cf011a7161c8e5}\label{maillon_8h_a85671a397508c3dad2cf011a7161c8e5}} 
+\index{maillon.\+h@{maillon.\+h}!get\+Mask@{get\+Mask}}
+\index{get\+Mask@{get\+Mask}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{get\+Mask()}{getMask()}}
+{\footnotesize\ttfamily unsigned int get\+Mask (\begin{DoxyParamCaption}\item[{int}]{k }\end{DoxyParamCaption})}
+
+
+
+Récupère le masque correspondant à l\textquotesingle{}entier k. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & est un entier \mbox{[}0;5\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le masque correspondant à l\textquotesingle{}entier k. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a130a89121ef82470564c63bffa8b4786}\label{maillon_8h_a130a89121ef82470564c63bffa8b4786}} 
+\index{maillon.\+h@{maillon.\+h}!get\+Size\+Maillon@{get\+Size\+Maillon}}
+\index{get\+Size\+Maillon@{get\+Size\+Maillon}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{get\+Size\+Maillon()}{getSizeMaillon()}}
+{\footnotesize\ttfamily int get\+Size\+Maillon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Détermine la taille du maillon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & est un maillon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la taille du maillon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a7e382e1ac4b64fedeaa24a24fc96e14c}\label{maillon_8h_a7e382e1ac4b64fedeaa24a24fc96e14c}} 
+\index{maillon.\+h@{maillon.\+h}!is\+Available@{is\+Available}}
+\index{is\+Available@{is\+Available}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{is\+Available()}{isAvailable()}}
+{\footnotesize\ttfamily int is\+Available (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Vérifie si c est un bien une lettre minuscule. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & c est un char. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le char est valide, sinon 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_ae80e635ff96174d1631df5488937e0ab}\label{maillon_8h_ae80e635ff96174d1631df5488937e0ab}} 
+\index{maillon.\+h@{maillon.\+h}!maillon\+To\+String@{maillon\+To\+String}}
+\index{maillon\+To\+String@{maillon\+To\+String}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{maillon\+To\+String()}{maillonToString()}}
+{\footnotesize\ttfamily char $\ast$ maillon\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$}]{link }\end{DoxyParamCaption})}
+
+
+
+Convertit un maillon en chaine de caractère. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & est un maillon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le maillon convertit en chaine de caractère. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_af9d909f1d43b78f659b13c3957de7550}\label{maillon_8h_af9d909f1d43b78f659b13c3957de7550}} 
+\index{maillon.\+h@{maillon.\+h}!num\+To\+Char@{num\+To\+Char}}
+\index{num\+To\+Char@{num\+To\+Char}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{num\+To\+Char()}{numToChar()}}
+{\footnotesize\ttfamily char num\+To\+Char (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Convertit un int en char. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & est un int. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le caractère du code ascii. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a69d7cb21be4b069744e7bd49adfed481}\label{maillon_8h_a69d7cb21be4b069744e7bd49adfed481}} 
+\index{maillon.\+h@{maillon.\+h}!set\+Charnum@{set\+Charnum}}
+\index{set\+Charnum@{set\+Charnum}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{set\+Charnum()}{setCharnum()}}
+{\footnotesize\ttfamily void set\+Charnum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$}]{link,  }\item[{int}]{k,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Défini..... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em k} & est un entier \mbox{[}0;5\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maillon_8h_a0381425450cb493ddcf82016f3a68715}\label{maillon_8h_a0381425450cb493ddcf82016f3a68715}} 
+\index{maillon.\+h@{maillon.\+h}!string\+To\+Maillon@{string\+To\+Maillon}}
+\index{string\+To\+Maillon@{string\+To\+Maillon}!maillon.\+h@{maillon.\+h}}
+\subsubsection{\texorpdfstring{string\+To\+Maillon()}{stringToMaillon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmaillon__t}{maillon\+\_\+t}} $\ast$ string\+To\+Maillon (\begin{DoxyParamCaption}\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+convertit un mot en maillon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & est un array de char. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un maillon contenant la chaine de caractère. 
+\end{DoxyReturn}

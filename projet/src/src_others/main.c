@@ -2,6 +2,10 @@
 #include "word.h"
 #include "dico.h"
 
+#include "CuTest.h"
+#include "AllTests.h"
+
+#define FINAL 1
 #define maxSizeWord 25
 
 int main(int argc, char* argv[])
@@ -21,11 +25,15 @@ int main(int argc, char* argv[])
   unsigned int* colonne = (unsigned int*) malloc(sizeof(int));
   char* word = (char*) malloc(sizeof(char)*maxSizeWord);
   dico* dictionary = (dico*) malloc(sizeof(dico));
+  #if FINAL
   while(!feof(f)) {
     word = next_word(f,line,colonne); 
-    addToDico(dictionary,word,line,colonne); 
+    addToDico(&dictionary,word,line,colonne); 
   }
   displayDico(dictionary);
   fclose(f);
+  #else 
+  RunAllTests();
+  #endif
   return 0;
 }

@@ -1,0 +1,78 @@
+\hypertarget{dico_8h}{}\section{include/dico.h File Reference}
+\label{dico_8h}\index{include/dico.\+h@{include/dico.\+h}}
+
+
+Les fonctions utilisées pour les dictionnaires.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dico_8h_a2b0e87fa867834c0626580d481a4b2a3}{insert\+Dico}} (\mbox{\hyperlink{structdico}{dico}} $\ast$dictionary, \mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$link\+Word)
+\begin{DoxyCompactList}\small\item\em Insere un mot dans un dictionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dico_8h_a98fb30a1505fa261cc1f28e1da394260}{add\+To\+Dico}} (\mbox{\hyperlink{structdico}{dico}} $\ast$dictionary, char $\ast$word, unsigned int $\ast$line, unsigned int $\ast$colonne)
+\begin{DoxyCompactList}\small\item\em Créer un mot qui contient son emplacement et qui sera ajouté à un dictionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{dico_8h_aa472c846337decf8fc2fb99700cfcbc3}{display\+Dico}} (\mbox{\hyperlink{structdico}{dico}} $\ast$dictionary)
+\begin{DoxyCompactList}\small\item\em Affiche le dictionnaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions utilisées pour les dictionnaires. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dico_8h_a98fb30a1505fa261cc1f28e1da394260}\label{dico_8h_a98fb30a1505fa261cc1f28e1da394260}} 
+\index{dico.\+h@{dico.\+h}!add\+To\+Dico@{add\+To\+Dico}}
+\index{add\+To\+Dico@{add\+To\+Dico}!dico.\+h@{dico.\+h}}
+\subsubsection{\texorpdfstring{add\+To\+Dico()}{addToDico()}}
+{\footnotesize\ttfamily void add\+To\+Dico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdico}{dico}} $\ast$}]{dictionary,  }\item[{char $\ast$}]{word,  }\item[{unsigned int $\ast$}]{line,  }\item[{unsigned int $\ast$}]{colonne }\end{DoxyParamCaption})}
+
+
+
+Créer un mot qui contient son emplacement et qui sera ajouté à un dictionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & est un dictionnaire, word est un mot, line et colonne sont $>$=0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ne retourne rien (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dico_8h_aa472c846337decf8fc2fb99700cfcbc3}\label{dico_8h_aa472c846337decf8fc2fb99700cfcbc3}} 
+\index{dico.\+h@{dico.\+h}!display\+Dico@{display\+Dico}}
+\index{display\+Dico@{display\+Dico}!dico.\+h@{dico.\+h}}
+\subsubsection{\texorpdfstring{display\+Dico()}{displayDico()}}
+{\footnotesize\ttfamily void display\+Dico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdico}{dico}} $\ast$}]{dictionary }\end{DoxyParamCaption})}
+
+
+
+Affiche le dictionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & est un dictionnaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ne retourne rien (void). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dico_8h_a2b0e87fa867834c0626580d481a4b2a3}\label{dico_8h_a2b0e87fa867834c0626580d481a4b2a3}} 
+\index{dico.\+h@{dico.\+h}!insert\+Dico@{insert\+Dico}}
+\index{insert\+Dico@{insert\+Dico}!dico.\+h@{dico.\+h}}
+\subsubsection{\texorpdfstring{insert\+Dico()}{insertDico()}}
+{\footnotesize\ttfamily void insert\+Dico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdico}{dico}} $\ast$}]{dictionary,  }\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{link\+Word }\end{DoxyParamCaption})}
+
+
+
+Insere un mot dans un dictionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & est un dictionnaire, link\+Word est un mot. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ne retourne rien (void). 
+\end{DoxyReturn}

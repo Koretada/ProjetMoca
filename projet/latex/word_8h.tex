@@ -1,0 +1,138 @@
+\hypertarget{word_8h}{}\section{include/word.h File Reference}
+\label{word_8h}\index{include/word.\+h@{include/word.\+h}}
+
+
+Les fonctions liées aux mots.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{word_8h_a233e46b2aa342861b032939f8f0323f0}{next\+\_\+word}} (F\+I\+LE $\ast$f, unsigned int $\ast$nblin, unsigned int $\ast$nbcol)
+\begin{DoxyCompactList}\small\item\em Récupére le prochain mot. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{word_8h_a9b0318e04b3bcdf6a2084af12b223347}{compare\+Word}} (\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$w1, \mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$w2)
+\begin{DoxyCompactList}\small\item\em Compare deux mots. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{word_8h_ae7a9499e98abc83c01d64eaee6ffea72}{add\+Tail\+Word}} (\mbox{\hyperlink{structdico}{dico}} $\ast$dictionary, \mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$link\+Word)
+\begin{DoxyCompactList}\small\item\em Ajoute un mot en fin du dictionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{word_8h_aeb427f6f6092f152f71732b82fe55bd9}{add\+Head\+Word}} (\mbox{\hyperlink{structdico}{dico}} $\ast$dictionary, \mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$link\+Word)
+\begin{DoxyCompactList}\small\item\em Ajoute un mot en tête du dictionnaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{word_8h_a954e0145c686983628a06170cd4bfbc6}{inc\+Word}} (\mbox{\hyperlink{structemplacement__t}{emplacement\+\_\+t}} $\ast$location, unsigned int line, unsigned int colonne)
+\begin{DoxyCompactList}\small\item\em Ajoute la position du mot en fonction de la ligne et colonne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{word_8h_ad2018f1a14c9ff92ce5e62cb919726b8}{display\+Word}} (\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$word, F\+I\+LE $\ast$filedes)
+\begin{DoxyCompactList}\small\item\em Affiche le mot et son début en ligne et colonne dans le fichier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Les fonctions liées aux mots. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{word_8h_aeb427f6f6092f152f71732b82fe55bd9}\label{word_8h_aeb427f6f6092f152f71732b82fe55bd9}} 
+\index{word.\+h@{word.\+h}!add\+Head\+Word@{add\+Head\+Word}}
+\index{add\+Head\+Word@{add\+Head\+Word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{add\+Head\+Word()}{addHeadWord()}}
+{\footnotesize\ttfamily void add\+Head\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdico}{dico}} $\ast$}]{dictionary,  }\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{link\+Word }\end{DoxyParamCaption})}
+
+
+
+Ajoute un mot en tête du dictionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & est un dico, link\+Word est un \mbox{\hyperlink{structmot__t}{mot\+\_\+t}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{word_8h_ae7a9499e98abc83c01d64eaee6ffea72}\label{word_8h_ae7a9499e98abc83c01d64eaee6ffea72}} 
+\index{word.\+h@{word.\+h}!add\+Tail\+Word@{add\+Tail\+Word}}
+\index{add\+Tail\+Word@{add\+Tail\+Word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{add\+Tail\+Word()}{addTailWord()}}
+{\footnotesize\ttfamily void add\+Tail\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdico}{dico}} $\ast$}]{dictionary,  }\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{link\+Word }\end{DoxyParamCaption})}
+
+
+
+Ajoute un mot en fin du dictionnaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & est un dico, link\+Word est un \mbox{\hyperlink{structmot__t}{mot\+\_\+t}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{word_8h_a9b0318e04b3bcdf6a2084af12b223347}\label{word_8h_a9b0318e04b3bcdf6a2084af12b223347}} 
+\index{word.\+h@{word.\+h}!compare\+Word@{compare\+Word}}
+\index{compare\+Word@{compare\+Word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{compare\+Word()}{compareWord()}}
+{\footnotesize\ttfamily int compare\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{w1,  }\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{w2 }\end{DoxyParamCaption})}
+
+
+
+Compare deux mots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w1} & et w2 sont des mots. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 si w1 $<$ w2, 1 si w1 $>$ w2 et 0 si ils sont égaux. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{word_8h_ad2018f1a14c9ff92ce5e62cb919726b8}\label{word_8h_ad2018f1a14c9ff92ce5e62cb919726b8}} 
+\index{word.\+h@{word.\+h}!display\+Word@{display\+Word}}
+\index{display\+Word@{display\+Word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{display\+Word()}{displayWord()}}
+{\footnotesize\ttfamily void display\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmot__t}{mot\+\_\+t}} $\ast$}]{word,  }\item[{F\+I\+LE $\ast$}]{filedes }\end{DoxyParamCaption})}
+
+
+
+Affiche le mot et son début en ligne et colonne dans le fichier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & est un \mbox{\hyperlink{structmot__t}{mot\+\_\+t}} non null, filedes est un fichier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{word_8h_a954e0145c686983628a06170cd4bfbc6}\label{word_8h_a954e0145c686983628a06170cd4bfbc6}} 
+\index{word.\+h@{word.\+h}!inc\+Word@{inc\+Word}}
+\index{inc\+Word@{inc\+Word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{inc\+Word()}{incWord()}}
+{\footnotesize\ttfamily void inc\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structemplacement__t}{emplacement\+\_\+t}} $\ast$}]{location,  }\item[{unsigned int}]{line,  }\item[{unsigned int}]{colonne }\end{DoxyParamCaption})}
+
+
+
+Ajoute la position du mot en fonction de la ligne et colonne. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & est un emplacement, line et colonne $>$=0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ne retourne rien. (void) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{word_8h_a233e46b2aa342861b032939f8f0323f0}\label{word_8h_a233e46b2aa342861b032939f8f0323f0}} 
+\index{word.\+h@{word.\+h}!next\+\_\+word@{next\+\_\+word}}
+\index{next\+\_\+word@{next\+\_\+word}!word.\+h@{word.\+h}}
+\subsubsection{\texorpdfstring{next\+\_\+word()}{next\_word()}}
+{\footnotesize\ttfamily char $\ast$ next\+\_\+word (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{f,  }\item[{unsigned int $\ast$}]{nblin,  }\item[{unsigned int $\ast$}]{nbcol }\end{DoxyParamCaption})}
+
+
+
+Récupére le prochain mot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & fichier à ouvrir, nblin et nbcol qui sont supérieurs ou égales à 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un tableau contenant les caractères du mot qui suit. 
+\end{DoxyReturn}

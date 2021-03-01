@@ -84,9 +84,9 @@ int isAvailable(char c) {
 int getSizeMaillon(maillon_t* link) {
   int res=0;
   if (link == NULL) {
-    return 0;
+    return res;
   } else {
-    int i = 0,res = 0;
+    int i = 0;
     maillon_t* useLink = link;
     while(useLink != NULL) {
       for(i=0;i<=5;i++) {
@@ -96,8 +96,8 @@ int getSizeMaillon(maillon_t* link) {
       useLink = useLink->next;
     }
     free(useLink);
+    return res;
   }
-  return res;
 }
 
 char* maillonToString(maillon_t* link) {

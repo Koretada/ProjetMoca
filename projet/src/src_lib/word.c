@@ -1,7 +1,7 @@
 #include "maillon.h"
 #include "word.h"
 
-#define SEP " ,.-" 
+#define SEP ";:/,.-?!' " 
 char *separators = SEP; 
 
 unsigned int current_line=1;
@@ -23,7 +23,7 @@ char *next_word(FILE *f, unsigned int *nblin, unsigned int *nbcol){
   ungetc(sep,f);
   if (nblin != NULL) *nblin = startl;  
   if (nbcol != NULL) *nbcol = startc;
-  while ((strchr(separators, s[i]=fgetc(f)) == NULL) && s[i] != '\n'){
+  while ((strchr(separators, s[i]=fgetc(f)) == NULL) && s[i] != '\n' && !feof(f)){
     i++; startc++;
   }
   sep = s[i]; 
@@ -52,7 +52,7 @@ int compareWord(mot_t* w1, mot_t* w2) {
     char* word1 = maillonToString(w1->tete_mot);
     char* word2 = maillonToString(w2->tete_mot);
     int minSize = (strlen(word1)<strlen(word2))?strlen(word1):strlen(word2);
-    int i;
+    int i=0;
     int pos = 0;
     while(i<minSize && pos == 0) {
       pos = (word1[i]<word2[i])?-1:(word1[i]>word2[i])?1:0;
@@ -74,11 +74,11 @@ void addTailWord(dico* dictionary, mot_t* linkWord) {
   }
 }
 
-void addHeadWord(dico* dictionary, mot_t* linkWord) {
+void addHeadWord(dico** dictionary, mot_t* linkWord) {
   dico* newDictionary = (dico*) malloc(sizeof(dico));
   newDictionary->mot = linkWord;
-  newDictionary->next = dictionary;
-  dictionary = newDictionary;
+  newDictionary->next = *dictionary;
+  *dictionary = newDictionary;
 }
 
 void incWord(emplacement_t* location, unsigned int line, unsigned int colonne) {
@@ -110,4 +110,17 @@ void displayWord(mot_t* word, FILE *filedes) {
     free(link);
     free(list);
   }
+}
+
+mot_t* generateMot_t(char* word, unsigned int* line, unsigned int* colonne){
+  mot_t* newLinkWord = (mot_t*) malloc(sizeof(mot_t));
+  emplacement_t* location = (emplacement_t*) malloc(sizeof(emplacement_t));
+  newLinkWord->tete_mot = stringToMaillon(word);
+  newLinkWord->queue_mot = newLinkWord->tete_mot;   
+  location->line = *line;
+  location->colonne = *colonne;
+  location->next = NULL;
+  newLinkWord->tete_liste = location;
+  newLinkWord->queue_liste = location;
+  return newLinkWord;
 }
