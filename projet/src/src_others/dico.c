@@ -9,7 +9,11 @@
 
 void insertDico(dico** dictionary, mot_t* linkWord) {
   dico* newDictionary = (dico*) malloc(sizeof(dico));
+  newDictionary->mot=NULL;
+  newDictionary->next=NULL;
   dico* newDictionaryPrevious = (dico*) malloc(sizeof(dico));
+  newDictionaryPrevious->mot=NULL;
+  newDictionaryPrevious->next=NULL;
   newDictionary = *dictionary;
   newDictionaryPrevious = newDictionary; 
   while(compareWord(newDictionary->mot,linkWord)<0 && newDictionary != NULL) {
@@ -34,7 +38,8 @@ void insertDico(dico** dictionary, mot_t* linkWord) {
 }
 
 void addToDico(dico** dictionary, char* word, unsigned int* line, unsigned int* colonne) {
-  mot_t* newLinkWord = generateMot_t(word,line,colonne);
+  mot_t* newLinkWord = (mot_t*) malloc(sizeof(mot_t));
+  newLinkWord = generateMot_t(word,line,colonne);
   if (*dictionary == NULL) {  
     dico* newDictionary = (dico*) malloc(sizeof(dico));
     newDictionary->mot = newLinkWord;
@@ -58,7 +63,7 @@ void displayDico(dico* dictionary) {
   if (dictionary == NULL) {
     printf("displayDico : NULL\n");
   } else {
-    fprintf(f, "Contenu dictionnaire pour %s : \n", TEXTE);
+    fprintf(f, "Contenu dictionnaire pour le fichier entrant.");
     dico* tempDico = (dico*) malloc(sizeof(dico));
     tempDico = dictionary;
     while(tempDico != NULL) {

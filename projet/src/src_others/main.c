@@ -5,6 +5,10 @@
 #include "CuTest.h"
 #include "AllTests.h"
 
+#ifdef KLEE
+#include <klee/klee.h>
+#endif
+
 #define FINAL 1
 #define maxSizeWord 25
 
@@ -21,10 +25,18 @@ int main(int argc, char* argv[])
     printf("Utilisation : ./main <FichieraOuvrir>\n");
     exit(1);
   }
-  unsigned int* line = (unsigned int*) malloc(sizeof(int));
-  unsigned int* colonne = (unsigned int*) malloc(sizeof(int));
+  unsigned int* line = (unsigned int*) malloc(sizeof(unsigned int));
+  unsigned int* colonne = (unsigned int*) malloc(sizeof(unsigned int));
   char* word = (char*) malloc(sizeof(char)*maxSizeWord);
   dico* dictionary = (dico*) malloc(sizeof(dico));
+  dictionary->mot = NULL; // On initialise le mot de notre dictionnaire : resultat valgrind
+  dictionary->next = NULL; // On initialise le next de notre dictionnaire : resultat valgrind
+  #ifdef KLEE
+  klee_make_symbolic(dictionary,sizeof(dico),"linetest");  
+  //klee_assume((*line>0) && (*line < 100));
+  //klee_make_symbolic(&dictionary,sizeof(dictionary),"dicotest");
+ //klee_assume((*line >0) && (*line <500));
+  #endif
   #if FINAL
   while(!feof(f)) {
     word = next_word(f,line,colonne); 
@@ -35,5 +47,13 @@ int main(int argc, char* argv[])
   #else 
   RunAllTests();
   #endif
+  //free(line);
+  //free(colonne);
+  //free(word);
+  free(word);
+  free(dictionary->mot);
+  free(dictionary->next);
+  free(dictionary);
+  
   return 0;
 }

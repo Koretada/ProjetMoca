@@ -1,5 +1,6 @@
 #include "maillon.h"
 #include "word.h"
+#include <ctype.h>
 
 #define SEP ";:/,.-?!' " 
 char *separators = SEP; 
@@ -24,7 +25,14 @@ char *next_word(FILE *f, unsigned int *nblin, unsigned int *nbcol){
   if (nblin != NULL) *nblin = startl;  
   if (nbcol != NULL) *nbcol = startc;
   while ((strchr(separators, s[i]=fgetc(f)) == NULL) && s[i] != '\n' && !feof(f)){
+    if (isalpha(s[i]) == 0){ // Si ce n'est pas une lettre (a-z & A-Z).
+      fprintf(stderr,"le caractere %c n\'est pas une minuscule \n"
+      "Notre programme ne peut traiter ce genre de fichier.\n",s[i]); // Gerer les erreurs de notre fuzzing
+      exit(1);
+    }
+    else {
     i++; startc++;
+    }
   }
   sep = s[i]; 
   s[i] = '\0';
@@ -58,7 +66,24 @@ int compareWord(mot_t* w1, mot_t* w2) {
       pos = (word1[i]<word2[i])?-1:(word1[i]>word2[i])?1:0;
       i++;
     }
-    return (pos == 0 && strlen(word1) < strlen(word2))?-1:(pos == 0 && strlen(word1) > strlen(word2))?1:pos;
+    if((pos == 0 && strlen(word1) < strlen(word2))){
+      free(word1);
+      free(word2);
+      return -1;
+    }
+    else if ((pos == 0 && strlen(word1) > strlen(word2))){
+      free(word1);
+      free(word2);
+      return 1;
+    }
+    else {
+      free(word1);
+      free(word2);
+      return pos; 
+    }
+    //return (pos == 0 && strlen(word1) < strlen(word2))?-1:(pos == 0 && strlen(word1) > strlen(word2))?1:pos; 
+    //Ce return ne permettait pas liberer les words.
+    // Adress Sanitizer
   }
 }
 

@@ -117,7 +117,7 @@ char* maillonToString(maillon_t* link) {
       }
       useLink = useLink->next;
     }
-    word[index+1] = '\0';
+    word[index] = '\0'; // MODIFIER PAR NOUS AVANT C'ETAIT +1 
     free(useLink);
     return word;
   }
